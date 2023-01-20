@@ -1,11 +1,13 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Form, Input, Button, Select, DatePicker, Upload, } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const { Option } = Select;
 
-const Homepage = () => {
+const Forms = () => {
     const [form] = Form.useForm();
     const [image, setImage] = useState("");
+    const Navigate = useNavigate();
 
     const uploadImage = async (options) => {
         const { file } = options;
@@ -32,7 +34,7 @@ const Homepage = () => {
 
     const onFinish = async (values) => {
         console.log(values, "values");
-        let result = await fetch("http://localhost:5010/createuserformdata", {
+        let result = await fetch("http://localhost:5011/createuserformdata", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -58,6 +60,8 @@ const Homepage = () => {
         } else {
             form.resetFields();
         }
+        Navigate('/formdata')
+
         return result
 
     };
@@ -176,4 +180,4 @@ const Homepage = () => {
     );
 };
 
-export default Homepage;
+export default Forms;
