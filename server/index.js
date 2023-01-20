@@ -2,8 +2,9 @@ const express = require('express')
 const app = express();
 const mongoose = require('mongoose')
 const { DB } = require('./key.js')
-const port = 5010;
+const port = 5011;
 const cors = require('cors')
+require('./model/user')
 require('./model/formDataModel')
 
 const connectionParams = {
@@ -22,6 +23,7 @@ mongoose
 app.use(express.json())
 app.use(cors());
 
+app.use(require('./routes/auth'))
 app.use(require('./routes/formDataRoute'))
 
 app.listen(port, () => {
