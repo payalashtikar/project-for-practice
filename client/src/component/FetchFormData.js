@@ -9,7 +9,7 @@ const FetchFormData = () => {
 
     async function fetchData() {
         try {
-            const response = await axios.get("http://localhost:5010/getalluserdata")
+            const response = await axios.get("http://localhost:5011/getalluserdata")
             console.log(response, 'response')
             return setData(response?.data?.userData)
         }
