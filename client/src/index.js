@@ -5,12 +5,14 @@ import reportWebVitals from './reportWebVitals';
 import Forms from './component/Forms';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 ;
+import FetchFormData from './component/FetchFormData';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path='/form' element={<Forms />} />
+      <Route path='/formdata' element={<FetchFormData />} />
     </Routes>
   </BrowserRouter>
 );

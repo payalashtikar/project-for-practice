@@ -30,10 +30,8 @@ const FormDataModelSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: {
-            values: ["SINGLE", "MARRIED", "UNMARRIED"],
-        },
-        default: "SINGLE",
+        required: true,
+      
     },
     email: {
         type: String,
@@ -49,10 +47,10 @@ const FormDataModelSchema = new mongoose.Schema({
         required: true,
         default: "no photo"
     },
-    Date: {
-        type: Date,
-        default: Date.now,
-    },
+    // Date: {
+    //     type: Date,
+    //     default: Date.now,
+    // },
 
 })
 
